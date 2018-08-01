@@ -12,6 +12,9 @@ dev/frontend/release
 dev/frontend/yarn.lock
 dev/frontend/package-lock.json
 /home/ilyadruzhinin/Desktop/zen/examples/parity-bitcoin/target
+experimental/rust-wasm/Cargo.lock
+experimental/rust-wasm/target/
+
 # Logs
 logs
 *.log
