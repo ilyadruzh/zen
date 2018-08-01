@@ -1,5 +1,5 @@
 use exonum::crypto::{ PublicKey, Hash };
-use schema::EmployeeId;
+// use schema::EmployeeId;
 use service::SERVICE_ID;
 
 transactions! {

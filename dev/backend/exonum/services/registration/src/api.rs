@@ -11,7 +11,7 @@ use schema::*;
 use schema::EmployeeId;
 use serde_json;
 use std::fmt;
-use transactions::EmployeesTransactions;
+use transactions::RoleSystemTransactions;
 
 /// The structure returned by the REST API.
 #[derive(Debug, Serialize, Deserialize)]
@@ -28,14 +28,14 @@ pub struct AccountInfo {
 
 /// Employees service API description.
 #[derive(Clone)]
-pub struct EmployeesApi<T: TransactionSend + Clone> {
+pub struct RoleSystemApi<T: TransactionSend + Clone> {
     /// Exonum blockchain.
     pub blockchain: Blockchain,
     /// Channel for transactions.
     pub channel: T,
 }
 
-impl<T> EmployeesApi<T>
+impl<T> RoleSystemApi<T>
     where
         T: TransactionSend + Clone + 'static,
 {
@@ -50,26 +50,26 @@ impl<T> EmployeesApi<T>
             let transaction = schema.transactions().get(&tx_hash);
 
             if let Some(tx) = transaction {
-                let tx =  EmployeesTransactions::tx_from_raw(tx);
+                let tx =  RoleSystemTransactions::tx_from_raw(tx);
 
                 if let Ok(tx) = tx {
                     // Is there any of possible transactions that modifies a specific account?
                     found = match tx {
-                        EmployeesTransactions::TxCreateAccount(tx) => {
+                        RoleSystemTransactions::TxCreateAccount(tx) => {
                             tx.pub_key() == account.pub_key()
                         }
 
-                        EmployeesTransactions::TxEditAccount(tx) => {
-                            tx.pkey_account() == account.pub_key()
-                        }
+                        // RoleSystemTransactions::TxEditAccount(tx) => {
+                        //     tx.pkey_account() == account.pub_key()
+                        // }
 
-                        EmployeesTransactions::TxSetCustomData(tx) => {
-                            tx.pkey_account() == account.pub_key()
-                        }
+                        // RoleSystemTransactions::TxSetCustomData(tx) => {
+                        //     tx.pkey_account() == account.pub_key()
+                        // }
 
-                        EmployeesTransactions::TxDeleteAccount(tx) => {
-                            tx.pkey_account() == account.pub_key()
-                        }
+                        // RoleSystemTransactions::TxDeleteAccount(tx) => {
+                        //     tx.pkey_account() == account.pub_key()
+                        // }
                     };
 
                     if found {
@@ -109,19 +109,19 @@ impl<T> EmployeesApi<T>
 
     /// Same as `block_by_account` but firstly looks up for an account
     /// that is associated with the specific `EmployeeId`
-    fn block_by_employee_id(&self, id: &EmployeeId) -> Option<Height> {
-        let view = self.blockchain.snapshot();
-        let employees_schema = EmployeesSchema::new(view);
+    // fn block_by_employee_id(&self, id: &EmployeeId) -> Option<Height> {
+    //     let view = self.blockchain.snapshot();
+    //     let employees_schema = EmployeesSchema::new(view);
 
-        if let Some(account) = employees_schema.account_by_id(id) {
-            return self.block_by_account(&account);
-        }
+    //     if let Some(account) = employees_schema.account_by_id(id) {
+    //         return self.block_by_account(&account);
+    //     }
 
-        None
-    }
+    //     None
+    // }
 
     fn transaction(&self, req: &mut Request) -> IronResult<Response> {
-        match req.get::<bodyparser::Struct<EmployeesTransactions>>() {
+        match req.get::<bodyparser::Struct<RoleSystemTransactions>>() {
             Ok(Some(transaction)) => {
                 let transaction: Box<Transaction> = transaction.into();
                 let tx_hash = transaction.hash();
@@ -138,7 +138,7 @@ impl<T> EmployeesApi<T>
     fn account(&self, req: &mut Request) -> IronResult<Response> {
         let pub_key: PublicKey = self.url_fragment(req, "pubkey")?;
         let view = self.blockchain.snapshot();
-        let schema = EmployeesSchema::new(view);
+        let schema = RoleSystemSchema::new(view);
         if let Some(account) = schema.account(&pub_key) {
             self.ok_response(&serde_json::to_value(&account).unwrap())
         } else {
@@ -146,20 +146,20 @@ impl<T> EmployeesApi<T>
         }
     }
 
-    fn block_by_id(&self, req: &mut Request) -> IronResult<Response> {
-        let employee_id: EmployeeId = self.url_fragment(req, "id")?;
+    // fn block_by_id(&self, req: &mut Request) -> IronResult<Response> {
+    //     let employee_id: EmployeeId = self.url_fragment(req, "id")?;
 
-        if let Some(height) = self.block_by_employee_id(&employee_id) {
-            self.ok_response(&serde_json::to_value(&height).unwrap())
-        } else {
-            self.not_found_response(&serde_json::to_value("Account not found").unwrap())
-        }
-    }
+    //     if let Some(height) = self.block_by_employee_id(&employee_id) {
+    //         self.ok_response(&serde_json::to_value(&height).unwrap())
+    //     } else {
+    //         self.not_found_response(&serde_json::to_value("Account not found").unwrap())
+    //     }
+    // }
 
     /// Endpoint for dumping all accounts from the storage.
     fn accounts(&self, _: &mut Request) -> IronResult<Response> {
         let snapshot = self.blockchain.snapshot();
-        let schema = EmployeesSchema::new(snapshot);
+        let schema = RoleSystemSchema::new(snapshot);
         let idx = schema.accounts();
         let accounts: Vec<Account> = idx.values().collect();
 
@@ -169,11 +169,11 @@ impl<T> EmployeesApi<T>
 
 impl<T: TransactionSend + Clone> fmt::Debug for EmployeesApi<T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "EmployeesApi {{}}")
+        write!(f, "RoleSystemApi {{}}")
     }
 }
 
-impl<T> Api for EmployeesApi<T>
+impl<T> Api for RoleSystemApi<T>
     where
         T: 'static + TransactionSend + Clone,
 {

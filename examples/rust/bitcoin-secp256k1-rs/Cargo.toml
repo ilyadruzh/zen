@@ -1,0 +1,11 @@
+[package]
+
+name = "bitcoin-secp256k1-rs"
+version = "0.0.1"
+authors = [
+	"Dawid Ciężarkiewicz <dpc@ucore.info>"
+	]
+
+[[lib]]
+name = "bitcoin-secp256k1-rs"
+path = "src/secp256k1.rs"

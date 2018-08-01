@@ -7,15 +7,16 @@ use exonum::helpers::fabric::{Argument, CommandExtension, CommandName, Context, 
                               ServiceFactory};
 use exonum::node::NodeConfig;
 use failure;
-use service::EmployeesService;
+use service::RoleSystemService;
 use std::collections::BTreeMap;
 use toml::Value;
 
 /// Employees configuration that should be saved into the file
 #[derive(Clone, Debug, Serialize, Deserialize)]
-pub struct EmployeesServiceConfig {
+pub struct RoleSystemServiceConfig {
     /// Superuser public key.
-    pub superuser_pkey: String,
+    // pub superuser_pkey: String,
+    pub tue: bool,
 }
 
 struct GenerateCommonConfig;
@@ -104,14 +105,14 @@ impl ServiceFactory for RoleSystemServiceFactory {
     }
 
     fn make_service(&mut self, run_context: &Context) -> Box<Service> {
-        let employees_service_config: EmployeesServiceConfig =
-            run_context.get(keys::NODE_CONFIG).unwrap().services_configs["employees_service"]
+        let rolesystem_service_config: RoleSystemServiceConfig =
+            run_context.get(keys::NODE_CONFIG).unwrap().services_configs["rolesystem_service"]
                 .clone()
                 .try_into()
                 .unwrap();
 
-        Box::new(EmployeesService::new(
-            employees_service_config.superuser_pkey
+        Box::new(RoleSystemService::new(
+            rolesystem_service_config.superuser_pkey
         ))
     }
 }

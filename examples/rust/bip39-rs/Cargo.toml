@@ -1,0 +1,26 @@
+[package]
+
+name = "bip39"
+version = "0.5.1"
+authors = [ "Stephen Oliver <steve@infincia.com>" ]
+license = "MIT/Apache-2.0"
+homepage = "https://github.com/infincia/bip39-rs/"
+repository = "https://github.com/infincia/bip39-rs/"
+readme = "README.md"
+description = "A Rust implementation of BIP-0039"
+documentation = "https://docs.rs/bip39"
+keywords = ["bip39", "bitcoin", "mnemonic"]
+
+[lib]
+name = "bip39"
+path = "src/lib.rs"
+
+
+[dependencies]
+error-chain ="^0.11.0"
+bitreader = "^0.3.0"
+bit-vec = "^0.4.3"
+ring = "^0.12"
+rand = "^0.3.15"
+data-encoding = "^2.0"
+lazy_static = "^0.2"

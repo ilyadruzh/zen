@@ -1,31 +1,41 @@
-use cmd::EmployeesServiceConfig;
-use exonum::{crypto::Hash, crypto::PublicKey, encoding, messages::RawTransaction, storage::Fork, storage::Snapshot};
+use cmd::RoleSystemServiceConfig;
 use exonum::blockchain::{ApiContext, Service, Transaction, TransactionSet};
 use exonum::encoding::serialize::FromHex;
+use exonum::{
+    crypto::Hash, crypto::PublicKey, encoding, messages::RawTransaction, storage::Fork,
+    storage::Snapshot,
+};
 use iron::Handler;
 use router::Router;
-use schema::EmployeesSchema;
+use schema::RoleSystemSchema;
 use serde_json;
 use serde_json::value::Value;
-use transactions::EmployeesTransactions;
+use transactions::RoleSystemTransactions;
 
 pub const SERVICE_ID: u16 = 101;
 
 pub struct RoleSystemService {
     // Public key of the superuser.
-    // pub superuser_pkey: String,
+// pub superuser_pkey: String,
 }
 
 impl RoleSystemService {
     /// Constructor of the RoleSystem service with superuser public key.
-    pub fn new() -> EmployeesService {
-        EmployeesService
+    pub fn new() -> RoleSystemService {
+        RoleSystemService
     }
 
     // backlog - Checks that `pkey` is activated.
-    pub fn is_activated(&self, pkey: &PublicKey) -> bool {
+    // pub fn is_activated(&self, pkey: &PublicKey) -> bool {
+    //     if let Ok(pk) = PublicKey::from_hex(self.superuser_pkey.clone()) {
+    //         return *pkey == pk
+    //     }
+    //     false
+    // }
+
+    pub fn is_activated() -> bool {
         if let Ok(pk) = PublicKey::from_hex(self.superuser_pkey.clone()) {
-            return *pkey == pk
+            return *pkey == pk;
         }
         false
     }
@@ -65,7 +75,7 @@ impl Service for RoleSystemService {
         use api;
         use exonum::api::Api;
 
-        let api = api::EmployeesApi {
+        let api = api::RoleSystemApi {
             channel: ctx.node_channel().clone(),
             blockchain: ctx.blockchain().clone(),
         };

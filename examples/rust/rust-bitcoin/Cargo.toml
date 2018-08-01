@@ -1,0 +1,37 @@
+
+[package]
+name = "bitcoin"
+version = "0.13.2"
+authors = ["Andrew Poelstra <apoelstra@wpsoftware.net>"]
+license = "CC0-1.0"
+homepage = "https://github.com/rust-bitcoin/rust-bitcoin/"
+repository = "https://github.com/rust-bitcoin/rust-bitcoin/"
+documentation = "https://docs.rs/bitcoin/"
+description = "General purpose library for using and interoperating with Bitcoin and other cryptocurrencies."
+keywords = [ "crypto", "bitcoin" ]
+readme = "README.md"
+
+[lib]
+name = "bitcoin"
+path = "src/lib.rs"
+
+[features]
+bitcoinconsenus = ["bitcoinconsensus"]
+fuzztarget = ["secp256k1/fuzztarget"]
+
+[dependencies]
+bitcoin-bech32 = "0.8.0"
+byteorder = "1.1"
+rand = "0.3"
+rust-crypto = "0.2"
+serde = "0.6"
+strason = "0.3"
+bitcoinconsensus = { version = "0.16", optional=true }
+
+[dependencies.hex]
+git = "https://github.com/KokaKiwi/rust-hex"
+rev = "19fd37137686c30058bd9d11d21590e726ffdf31"
+
+[dependencies.secp256k1]
+version = "0.9"
+features = [ "rand" ]

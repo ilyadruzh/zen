@@ -2,6 +2,7 @@
 dev/backend/zencore/target
 dev/backend/zencore/Cargo.lock
 dev/backend/exonum/target
+dev/backend/exonum/services/registration/target
 dev/backend/exonum/Cargo.lock
 dev/backend/zencore/services/rolesystem/target
 dev/backend/zencore/services/rolesystem/Cargo.lock
@@ -10,7 +11,7 @@ dev/frontend/app/node_modules
 dev/frontend/release
 dev/frontend/yarn.lock
 dev/frontend/package-lock.json
-
+/home/ilyadruzhinin/Desktop/zen/examples/parity-bitcoin/target
 # Logs
 logs
 *.log
