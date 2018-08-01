@@ -12,3 +12,5 @@
 - https://github.com/jeandudey/rust-lnd
 - https://github.com/lightningnetwork/lnd
 - https://github.com/ElementsProject/lightning
+- https://github.com/sparkswap
+- https://docs.google.com/presentation/d/16BK53bnfRVu_iHJKw2f82DRg6kk8061gxiJeKTCciKY/edit#slide=id.p

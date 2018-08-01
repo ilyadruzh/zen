@@ -1,0 +1,23 @@
+[package]
+name = "cardano"
+version = "0.1.0"
+authors = ["vincent.hanquez@iohk.io", "nicolas.diprima@iohk.io"]
+license = "MIT"
+description = "A Rust implementation of cardano types and wallet"
+keywords = [ "Cardano", "Wallet", "Crypto" ]
+
+[build-dependencies]
+
+[dependencies]
+serde = "1.0"
+serde_derive = "1.0"
+cryptoxide = { path = "../cryptoxide" }
+cbor_event = { path = "../cbor_event" }
+
+[dev-dependencies]
+rand = "0.4"
+serde_json = "*"
+unicode-normalization = "0.1.7"
+
+[features]
+with-bench = []

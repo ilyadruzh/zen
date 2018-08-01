@@ -1,0 +1,16 @@
+language: rust
+cache: cargo
+script:
+  - cargo build --verbose --all
+  - cargo test --verbose --all
+matrix:
+  include:
+    - rust: stable
+    - rust: beta
+    - rust: nightly
+    - rust: nightly
+      env:  TARGET="wasm32-unknown-unknown"
+      before_script:
+        - rustup target add ${TARGET} --toolchain nightly
+      script:
+        - cargo  +nightly build --target ${TARGET} --release --verbose  --package cryptoxide --package cardano --package protocol

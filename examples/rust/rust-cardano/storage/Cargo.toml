@@ -1,0 +1,11 @@
+[package]
+name = "storage"
+version = "0.1.0"
+authors = ["Vincent Hanquez <vincent.hanquez@iohk.io>", "Nicolas Di Prima <nicolas.diprima@iohk.io>"]
+
+[dependencies]
+cryptoxide = { path = "../cryptoxide" }
+cardano = { path = "../cardano" }
+cbor_event = { path = "../cbor_event" }
+log = "*"
+rand = "0.4"
