@@ -1,0 +1,95 @@
+[[bin]]
+name = "polkadot"
+path = "polkadot/src/main.rs"
+
+[package]
+name = "polkadot"
+version = "0.3.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+build = "build.rs"
+
+[dependencies]
+error-chain = "0.12"
+polkadot-cli = { path = "polkadot/cli" }
+futures = "0.1"
+ctrlc = { git = "https://github.com/paritytech/rust-ctrlc.git" }
+
+[build-dependencies]
+vergen = "0.1"
+
+[workspace]
+members = [
+	"polkadot/api",
+	"polkadot/cli",
+	"polkadot/collator",
+	"polkadot/consensus",
+	"polkadot/executor",
+	"polkadot/network",
+	"polkadot/primitives",
+	"polkadot/runtime",
+	"polkadot/service",
+	"polkadot/statement-table",
+	"polkadot/transaction-pool",
+	"polkadot/service",
+
+	"substrate/bft",
+	"substrate/cli",
+	"substrate/client",
+	"substrate/client/db",
+	"substrate/codec",
+	"substrate/environmental",
+	"substrate/executor",
+	"substrate/extrinsic-pool",
+	"substrate/keyring",
+	"substrate/misbehavior-check",
+	"substrate/network",
+	"substrate/primitives",
+	"substrate/rpc",
+	"substrate/rpc-servers",
+	"substrate/runtime-io",
+	"substrate/runtime-sandbox",
+	"substrate/runtime-std",
+	"substrate/runtime-support",
+	"substrate/runtime/consensus",
+	"substrate/runtime/contract",
+	"substrate/runtime/council",
+	"substrate/runtime/democracy",
+	"substrate/runtime/executive",
+	"substrate/runtime/primitives",
+	"substrate/runtime/session",
+	"substrate/runtime/staking",
+	"substrate/runtime/system",
+	"substrate/runtime/timestamp",
+	"substrate/runtime/version",
+	"substrate/serializer",
+	"substrate/service",
+	"substrate/state-db",
+	"substrate/state-machine",
+	"substrate/test-runtime",
+	"substrate/telemetry",
+	"substrate/keystore",
+	"demo/cli",
+	"demo/executor",
+	"demo/primitives",
+	"demo/runtime",
+	"safe-mix",
+	"subkey",
+]
+exclude = [
+	"polkadot/runtime/wasm",
+	"demo/runtime/wasm",
+	"substrate/executor/wasm",
+	"substrate/pwasm-alloc",
+	"substrate/pwasm-libc",
+	"substrate/test-runtime/wasm",
+]
+
+[badges]
+travis-ci = { repository = "paritytech/polkadot", branch = "master" }
+maintenance = { status = "actively-developed" }
+is-it-maintained-issue-resolution = { repository = "paritytech/polkadot" }
+is-it-maintained-open-issues = { repository = "paritytech/polkadot" }
+
+[profile.release]
+# Substrate runtime requires unwinding.
+panic = "unwind" 

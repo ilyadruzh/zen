@@ -1,0 +1,18 @@
+---
+
+threads: 4
+base: 'http://localhost:8200/api/services/employees/v1'
+iterations: 500
+
+plan:
+  - name: Create account for Jonh Smith
+    request:
+      url: /accounts/transaction
+      method: POST
+      body: '{"body":{"first_name":"John","id_number":"42","last_name":"Smith","pkey_by_who":"77471db2db2e2f0c1bde8cc222f790c707413447cebead035cde49a44a417188","pub_key":"ea490a6e2d2d4afbef7e5cbc45dcfef1de03bd7f3e2cc597199803efc38e092d"},"message_id":0,"protocol_version":0,"service_id":1993,"signature":"e5f22d68f1b60f37e3583c0a92a7d7f7fdb3c881bd9af6b4586c98a8cf25fa8a26a0de7aec322a78eaf14f2185af2f656f4bf8419a0d17822088914547152b0c"}'
+
+  - name: Edit John Smith into Ivan Pupkin
+    request:
+      url: /accounts/transaction
+      method: POST
+      body: '{"body":{"first_name":"Ivan","id_number":"32","last_name":"Pupkin","pkey_account":"ea490a6e2d2d4afbef7e5cbc45dcfef1de03bd7f3e2cc597199803efc38e092d","pkey_by_who":"77471db2db2e2f0c1bde8cc222f790c707413447cebead035cde49a44a417188","seed":"0"},"message_id":1,"protocol_version":0,"service_id":1993,"signature":"f60504d8b3b2abaa308e3b6550e594027445cb28ae2e09cb4c59604e2c998fc2bad7a38ed21575b41bb3b15903a18d128b7456290e0df5842a827785f987c300"}'

@@ -1,0 +1,14 @@
+{
+  "body": {
+    "first_name": "John",
+    "id_number": "42",
+    "last_name": "Smith",
+    "pkey_by_who": "77471db2db2e2f0c1bde8cc222f790c707413447cebead035cde49a44a417188",
+    "pub_key": "33224cdaba48d5e9e3752032109252a77b075d5e19330fcb17e6e379f2e29ba2"
+  },
+  "message_id": 0,
+  "network_id": 0,
+  "protocol_version": 0,
+  "service_id": 128,
+  "signature": "1bf552ffabed12dcc4f038e14404233f89a0ac1ff08d9fee5c4aa746014c6792033a3f0b0532bbd6289bcddfb7838e3da5475683be6568174ba297c61ed10207"
+}

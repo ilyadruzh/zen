@@ -1,0 +1,15 @@
+[package]
+name = "codechain-vm"
+version = "0.1.0"
+authors = ["CodeChain Team <codechain@kodebox.io>"]
+
+[lib]
+
+[dependencies]
+codechain-crypto = { path = "../crypto" }
+codechain-key = { path = "../key", features = ["ecdsa"] }
+codechain-types = { path = "../types" }
+primitives = { path = "../util/primitives" }
+
+[dev-dependencies]
+secp256k1 = { path = "../util/secp256k1" }

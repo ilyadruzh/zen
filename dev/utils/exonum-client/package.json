@@ -1,0 +1,100 @@
+{
+  "name": "exonum-client",
+  "version": "0.12.3",
+  "description": "Light Client for Exonum Blockchain",
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "dependencies": {
+    "axios": "^0.18.0",
+    "big-integer": "^1.6.32",
+    "binary-search": "^1.3.4",
+    "ieee754": "^1.1.12",
+    "sha.js": "^2.4.11",
+    "tweetnacl": "^0.14.5"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "dirty-chai": "^2.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "grunt": "^1.0.3",
+    "grunt-babel": "^7.0.0",
+    "grunt-browserify": "^5.3.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-eslint": "^20.2.0",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-replace": "^1.0.1",
+    "istanbul": "^0.4.5",
+    "json-loader": "^0.5.7",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "node-fetch": "^2.2.0",
+    "nyc": "^11.9.0"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "integration:build": "cargo build --manifest-path integration-tests/Cargo.toml",
+    "integration": "mocha -r babel-register integration-tests/test.js",
+    "preintegration:unix": "npm run integration:build && npm run postintegration:unix && cargo run --manifest-path integration-tests/Cargo.toml & sleep 10",
+    "integration:unix": "mocha -r babel-register integration-tests/test.js",
+    "postintegration:unix": "lsof -iTCP -sTCP:LISTEN -n -P 2>/dev/null | awk '{ if ($9 ~ /:8000$/) { print $2 } }' | xargs -r kill -KILL",
+    "coveralls": "cross-env NODE_ENV=test nyc mocha ./test/sources/*.js && cat ./coverage/lcov.info | coveralls",
+    "prepare": "grunt compile",
+    "lint": "eslint ./src ./test",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exonum/exonum-client.git"
+  },
+  "author": "Exonum Team <exonum@bitfury.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/exonum/exonum-client/issues"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "reporter": [
+      "lcov"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "homepage": "https://github.com/exonum/exonum-client#readme",
+  "keywords": [
+    "exonum",
+    "blockchain",
+    "transactions",
+    "cryptography",
+    "ed25519",
+    "nacl",
+    "sha256",
+    "merkle tree"
+  ]
+}

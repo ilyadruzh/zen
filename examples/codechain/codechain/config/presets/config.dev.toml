@@ -1,0 +1,49 @@
+[codechain]
+quiet = false
+db_path = "db"
+keys_path = "keys"
+chain = "solo"
+
+[mining]
+password_path = "password.txt"
+mem_pool_mem_limit = 4 # MB
+mem_pool_size = 8192
+notify_work = []
+force_sealing = false
+reseal_min_period = 0
+reseal_max_period = 120000
+work_queue_size = 20
+
+[network]
+disable = false
+port = 3485
+max_peers = 30
+min_peers = 10
+bootstrap_addresses = []
+sync = true
+parcel_relay = true
+discovery = true
+discovery_type = "unstructured"
+discovery_refresh = 60000
+discovery_bucket_size = 10
+address = "127.0.0.1"
+
+[rpc]
+disable = false
+interface = "127.0.0.1"
+port = 8080
+
+[ipc]
+disable = false
+path = "/tmp/jsonrpc.ipc"
+
+[snapshot]
+disable = false
+path = "snapshot"
+
+[stratum]
+disable = false
+port = 8008
+
+[shard_validator]
+disable = true

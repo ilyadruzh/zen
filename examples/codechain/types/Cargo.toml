@@ -1,0 +1,16 @@
+[package]
+name = "codechain-types"
+version = "0.1.0"
+authors = ["CodeChain Team <codechain@kodebox.io>"]
+
+[dependencies]
+byteorder = "1.2.3"
+codechain-crypto = { path = "../crypto" }
+codechain-key = { path = "../key" }
+heapsize = "0.4"
+primitives = { path = "../util/primitives" }
+rlp = { path = "../util/rlp" }
+rlp_derive = { path = "../util/rlp_derive" }
+serde = "1.0"
+serde_derive = "1.0"
+unexpected = { path = "../util/unexpected" }

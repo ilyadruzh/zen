@@ -1,0 +1,243 @@
+name: codechain
+version: "0.1.0"
+version_short: "v"
+author: CodeChain Team <codechain@kodebox.io>
+about: CodeChian Core client
+args:
+    - config:
+        long: config
+        help: Specify the certain config file path that you want to use to configure CodeChain to your needs.
+        takes_value: true
+    - port:
+        long: port
+        value_name: PORT
+        help: Listen for connections on PORT.
+        takes_value: true
+    - bootstrap-addresses:
+        long: bootstrap-addresses
+        value_name: BOOTSTRAP_ADDRESSES
+        help: Bootstrap addresses to connect.
+        takes_value: true
+        multiple: true
+    - no-network:
+        long: no-network
+        help: Do not open network socket.
+    - min-peers:
+        long: min-peers
+        value_name: NUM
+        help: Set the minimum number of connections the user would like.
+        takes_value: true
+    - max-peers:
+        long: max-peers
+        value_name: NUM
+        help: Set the maximum number of connections the user would like.
+        takes_value: true
+    - instance-id:
+        short: i
+        long: instance-id
+        help: Specify instance id for logging. Used when running multiple instances of CodeChain.
+        takes_value: true
+    - quiet:
+        short: q
+        long: quiet
+        help: Do not show any synchronization information in the console.
+    - chain:
+        short: c
+        long: chain
+        help: Set the blockchain type out of solo, solo_authority, tendermint, cuckoo, blake_pow or a path to chain spec file.
+        takes_value: true
+    - db-path:
+        long: db-path
+        value_name: PATH
+        help: Specify the database directory path.
+        takes_value: true
+    - keys-path:
+        long: keys-path
+        value_name: PATH
+        help: Specify the path for JSON key files to be found
+        takes_value: true
+    - snapshot-path:
+        long: snapshot-path
+        value_name: PATH
+        help: Specify the snapshot directory path.
+        takes_value: true
+    - no-sync:
+        long: no-sync
+        help: Do not run block sync extension
+    - no-parcel-relay:
+        long: no-parcel-relay
+        help: Do not relay parcels.
+    - jsonrpc-interface:
+        long: jsonrpc-interface
+        value_name: INTERFACE
+        help: Specify the interface address for rpc connections
+        takes_value: true
+    - jsonrpc-port:
+        long: jsonrpc-port
+        value_name: PORT
+        help: Listen for rpc connections on PORT.
+        takes_value: true
+    - no-ipc:
+        long: no-ipc
+        help: Do not run JSON-RPC over IPC service.
+        takes_value: false
+    - ipc-path:
+        long: ipc-path
+        value_name: PATH
+        help: Specify custom path for JSON-RPC over IPC service.
+        takes_value: true
+        conflicts_with:
+            - no-ipc
+    - no-jsonrpc:
+        long: no-jsonrpc
+        help: Do not run jsonrpc.
+        takes_value: false
+    - enable-devel-api:
+        long: enable-devel-api
+        help: Enable the RPC's devel APIs
+        takes_value: false
+    - author:
+        long: author
+        help: Specify the block author (aka "coinbase") address for sending block rewards from sealed blocks.
+        takes_value: true
+    - engine-signer:
+        long: engine-signer
+        help: Specify the address which should be used to sign consensus messages and issue blocks.
+        takes_value: true
+    - password-path:
+        long: password-path
+        help: Specify the engine signer's password file path.
+        takes_value: true
+    - mem-pool-mem-limit:
+        long: mem-pool-mem-limit
+        value_name: MB
+        help: Maximum amount of memory that can be used by the mem pool. Setting this parameter to 0 disables limiting.
+        takes_value: true
+    - mem-pool-size:
+        long: mem-pool-size
+        value_name: LIMIT
+        help: Maximum amount of parcels in the queue (waiting to be included in next block).
+        takes_value: true
+    - notify-work:
+        long: notify-work
+        value_name: URLS
+        help: URLs to which work package notifications are pushed.
+        takes_value: true
+        multiple: true
+    - force-sealing:
+        long: force-sealing
+        help: Force the node to author new blocks as if it were always sealing/mining.
+        takes_value: false
+    - reseal-min-period:
+        long: reseal-min-period
+        value_name: MS
+        help: Specify the minimum time between reseals from incoming parcels. MS is time measured in milliseconds.
+        takes_value: true
+    - reseal-max-period:
+        long: reseal-max-period
+        value_name: MS
+        help: Specify the maximum time since last block to enable force-sealing. MS is time measured in milliseconds.
+        takes_value: true
+    - work-queue-size:
+        long: work-queue-size
+        value_name: ITEMS
+        help: Specify the number of historical work packages which are kept cached lest a solution is found for them later. High values take more memory but result in fewer unusable solutions.
+        takes_value: true
+    - no-discovery:
+        long: no-discovery
+        help: Do not use discovery
+    - discovery:
+        long: discovery
+        help: Decides which p2p discovery extension to use. Options are kademlia and unstructured. In a testing environment, an unstructured p2p network is desirable because it is more than sufficient when there are a few users.
+        takes_value: true
+        possible_values:
+            - kademlia
+            - unstructured
+        conflicts_with:
+            - no-discovery
+    - discovery-bucket-size:
+        long: discovery-bucket-size
+        help: Bucket size for discovery
+        takes_value: true
+        conflicts_with:
+            - no-discovery
+    - discovery-refresh:
+        long: discovery-refresh
+        value_name: MS
+        help: Refresh timeout of discovery. MS is time measured in milliseconds.
+        takes_value: true
+        conflicts_with:
+            - no-discovery
+    - no-snapshot:
+        long: no-snapshot
+        help: Disable snapshots
+    - no-stratum:
+        long: no-stratum
+        help: Do not run Stratum server for miner push notification.
+    - stratum-port:
+        long: stratum-port
+        value_name: PORT
+        help: Specify the port portion of the Stratum server.
+        takes_value: true
+        conflicts_with:
+            - no-stratum
+    - no-shard-validator:
+        long: no-shard-validator
+        help: Do not run as a shard validator.
+    - shard-validator:
+        long: shard-validator
+        value_name: ACCOUNT
+        help: Specify the account for shard validator.
+        takes_value: true
+        conflicts_with:
+            - no-shard-validator
+    - shard-validator-password-path:
+        long: shard-validator-password-path
+        value_name: PATH
+        help: Specify the password path of account for shard validator.
+        takes_value: true
+        conflicts_with:
+            - no-shard-validator
+subcommands:
+    - account:
+        about: account managing commands
+        args:
+            - keys-path:
+                long: keys-path
+                value_name: PATH
+                help: Specify the path for JSON key files to be found
+                takes_value: true
+        subcommands:
+            - create:
+                about: create account
+            - import:
+                about: import JSON key file
+                args:
+                    - JSON_PATH:
+                        help: The path of the JSON key file.
+                        required: true
+                        index: 1
+            - import-raw:
+                about: import a raw private key
+                args:
+                    - RAW_KEY:
+                        help: A raw private key.
+                        required: true
+                        index: 1
+            - list:
+                about: list managed accounts
+            - remove:
+                about: remove a account
+                args:
+                    - ADDRESS:
+                        help: Address to remove
+                        required: true
+                        index: 1
+            - change-password:
+                about: change the password of given address
+                args:
+                    - ADDRESS:
+                        help: Address of desired password change
+                        required: true
+                        index: 1
+

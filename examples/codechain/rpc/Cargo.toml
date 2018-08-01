@@ -1,0 +1,29 @@
+[package]
+name = "codechain-rpc"
+version = "0.1.0"
+authors = ["CodeChain Team <codechain@kodebox.io>"]
+
+[lib]
+
+[dependencies]
+codechain-core = { path = "../core" }
+codechain-key = { path = "../key", features = ["ecdsa"] }
+codechain-logger = { path = "../util/logger" }
+codechain-network = { path = "../network" }
+codechain-state = { path = "../state" }
+codechain-types = { path = "../types" }
+kvdb = { path = "../util/kvdb" }
+kvdb-rocksdb = { path = "../util/kvdb-rocksdb" }
+log = "0.4.1"
+primitives = { path = "../util/primitives" }
+rlp = { path = "../util/rlp" }
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+rustc-hex = "1.0"
+rustc-serialize = "0.3"
+tokio-core = "0.1.1"
+jsonrpc-core = { git = "https://github.com/paritytech/jsonrpc.git", branch = "parity-1.11" }
+jsonrpc-macros = { git = "https://github.com/paritytech/jsonrpc.git", branch = "parity-1.11" }
+jsonrpc-http-server = { git = "https://github.com/paritytech/jsonrpc.git", branch = "parity-1.11" }
+jsonrpc-ipc-server = { git = "https://github.com/paritytech/jsonrpc.git", branch = "parity-1.11" }

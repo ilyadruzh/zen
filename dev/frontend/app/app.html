@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Заголовок</title>
+
+      <link href="./assets/css/font-face.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+  
+      <link href="./assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+  
+      <!-- <link href="./assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all"> -->
+      <link href="./assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/wow/animate.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/slick/slick.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+      <link href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+  
+      <!-- Main CSS-->
+      <link href="./assets/css/theme.css" rel="stylesheet" media="all">
+
+  <script>
+    (function () {
+      if (!process.env.HOT) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './dist/style.css';
+        // HACK: Writing the script path should be done with webpack
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }
+    }());
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    {
+      const scripts = [];
+
+      // Dynamically insert the DLL script in development env in the
+      // renderer process
+      if (process.env.NODE_ENV === 'development') {
+        scripts.push('../dll/renderer.dev.dll.js');
+      }
+
+      // Dynamically insert the bundled app script in the renderer process
+      const port = process.env.PORT || 1212;
+      scripts.push(
+        (process.env.HOT)
+          ? 'http://localhost:' + port + '/dist/renderer.dev.js'
+          : './dist/renderer.prod.js'
+      );
+
+      document.write(
+        scripts
+          .map(script => `<script defer src="${script}"><\/script>`)
+          .join('')
+      );
+    }
+  </script>
+
+</body>
+
+</html>

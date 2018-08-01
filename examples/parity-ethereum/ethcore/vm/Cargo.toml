@@ -1,0 +1,16 @@
+[package]
+name = "vm"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+
+[dependencies]
+byteorder = "1.0"
+parity-bytes = { git = "https://github.com/paritytech/parity-common" }
+ethereum-types = "0.3"
+patricia-trie = { git = "https://github.com/paritytech/parity-common" }
+patricia-trie-ethereum = { path = "../../util/patricia-trie-ethereum" }
+log = "0.3"
+common-types = { path = "../types" }
+ethjson = { path = "../../json" }
+rlp = { git = "https://github.com/paritytech/parity-common" }
+keccak-hash = { git = "https://github.com/paritytech/parity-common" }

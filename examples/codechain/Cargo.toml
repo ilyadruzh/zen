@@ -1,0 +1,56 @@
+[package]
+name = "codechain"
+version = "0.1.0"
+license = "AGPL-3.0"
+authors = ["CodeChain Team <codechain@kodebox.io>"]
+
+[dependencies]
+app_dirs = "^1.2.1"
+clap = { version = "2", features = ["yaml"] }
+codechain-core = { path = "core" }
+codechain-discovery = { path = "discovery" }
+codechain-finally = { path = "util/finally" }
+codechain-logger = { path = "util/logger" }
+codechain-key = { path = "key", features = ["ecdsa"] }
+codechain-keystore = { path = "keystore" }
+codechain-merkle = { path = "util/merkle" }
+codechain-network = { path = "network" }
+codechain-reactor = { path = "util/reactor" }
+codechain-rpc = { path = "rpc" }
+codechain-state = { path = "state" }
+codechain-sync = { path = "sync" }
+codechain-types = { path = "types" }
+codechain-vm = { path = "vm" }
+codechain-stratum = { path = "stratum" }
+ctrlc = { git = "https://github.com/paritytech/rust-ctrlc.git" }
+fdlimit = "0.1"
+futures = "0.1"
+log = "0.4.1"
+env_logger = "0.5.3"
+panic_hook = { path = "util/panic_hook" }
+parking_lot = "0.5"
+primitives = { path = "util/primitives" }
+rpassword = "2.0.0"
+serde = "1.0"
+serde_derive = "1.0"
+tokio-core = "0.1.6"
+toml = "0.4"
+
+[[bin]]
+path = "codechain/main.rs"
+name = "codechain"
+
+[workspace]
+members = [
+    "core",
+    "crypto",
+    "discovery",
+    "json",
+    "key",
+    "keystore",
+    "network",
+    "rpc",
+    "sync",
+    "types",
+    "vm",
+]

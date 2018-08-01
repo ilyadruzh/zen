@@ -1,0 +1,22 @@
+[package]
+name = "codechain-key"
+version = "0.1.0"
+authors = ["debris <marek.kotewicz@gmail.com>", "CodeChain Team <codechain@kodebox.io>"]
+
+[dependencies]
+rand = "0.5.3"
+rustc-hex = "1.0"
+rustc-serialize = "0.3"
+lazy_static = "0.2"
+bech32 = "0.2.2"
+codechain-crypto = { path = "../crypto" }
+primitives = { path = "../util/primitives" }
+heapsize = "0.4"
+rlp = { path = "../util/rlp" }
+secp256k1 = { path = "../util/secp256k1" }
+serde = "1.0"
+serde_json = "1.0"
+
+[features]
+ecdsa = []
+schnorr = []

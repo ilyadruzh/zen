@@ -1,0 +1,10 @@
+[package]
+name = "rw-stream-sink"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+license = "MIT"
+
+[dependencies]
+bytes = "0.4"
+futures = "0.1"
+tokio-io = "0.1"

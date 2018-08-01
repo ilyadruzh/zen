@@ -1,0 +1,18 @@
+[package]
+name = "journaldb"
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+description = "A `HashDB` which can manage a short-term journal potentially containing many forks of mutually exclusive actions"
+license = "GPL3"
+
+[dependencies]
+primitives = { path = "../primitives" }
+hashdb = { path = "../hashdb" }
+kvdb = { path = "../kvdb" }
+memorydb = { path = "../memorydb" }
+rlp = { path = "../rlp" }
+util-error = { path = "../error" }
+
+[dev-dependencies]
+codechain-crypto = { path = "../../crypto" }
+kvdb-memorydb = { path = "../kvdb-memorydb" }

@@ -1,0 +1,11 @@
+[package]
+name = "exonumcore"
+version = "0.1.0"
+authors = ["Ilya Druzhinin <ilya.druzh@gmail.com>"]
+
+[dependencies]
+exonum = "0.9.0"
+zen-rolesystem = { path = "../exonum/services/registration" } 
+zen-local-database = { path = "../exonum/services/database" } 
+exonum-configuration = "0.9.0"
+exonum-time = "0.9.0"

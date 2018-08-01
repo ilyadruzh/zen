@@ -1,0 +1,10 @@
+[package]
+name = "trie-standardmap"
+version = "0.1.0"
+authors = ["debris <marek.kotewicz@gmail.com>", "CodeChain Team <codechain@kodebox.io>"]
+description = "Standard test map for profiling tries"
+
+[dependencies]
+codechain-crypto = { path = "../../crypto" }
+primitives = { path = "../primitives" }
+rlp = { path = "../rlp" }

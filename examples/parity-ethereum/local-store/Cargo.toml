@@ -1,0 +1,21 @@
+[package]
+name = "parity-local-store"
+description = "Manages persistent local node data."
+version = "0.1.0"
+authors = ["Parity Technologies <admin@parity.io>"]
+
+[dependencies]
+ethcore = { path = "../ethcore" }
+ethcore-io = { path = "../util/io" }
+ethcore-transaction = { path = "../ethcore/transaction" }
+kvdb = { git = "https://github.com/paritytech/parity-common" }
+log = "0.3"
+rlp = { git = "https://github.com/paritytech/parity-common" }
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+
+[dev-dependencies]
+ethcore = { path = "../ethcore", features = ["test-helpers"] }
+ethkey = { path = "../ethkey" }
+kvdb-memorydb = { git = "https://github.com/paritytech/parity-common" }

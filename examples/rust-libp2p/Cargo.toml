@@ -1,0 +1,27 @@
+[workspace]
+members = [
+    "cid",
+    "circular-buffer",
+    "datastore",
+    "dns",
+    "floodsub",
+    "identify",
+    "kad",
+    "libp2p",
+    "multiaddr",
+    "multihash",
+    "mplex",
+    "multistream-select",
+    "peerstore",
+    "ping",
+    "ratelimit",
+    "relay",
+    "rw-stream-sink",
+    "secio",
+    "core",
+    "tcp-transport",
+    "transport-timeout",
+    "varint-rs",
+    "websocket",
+    "yamux"
+]

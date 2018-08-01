@@ -1,0 +1,19 @@
+[package]
+name = "codechain-discovery"
+version = "0.1.0"
+authors = ["CodeChain Team <codechain@kodebox.io>"]
+
+[dependencies]
+codechain-crypto = { path = "../crypto" }
+codechain-key = { path = "../key", features = ["ecdsa"] }
+codechain-logger = { path = "../util/logger" }
+codechain-network = { path = "../network" }
+log = "0.4.1"
+parking_lot = "0.5"
+primitives = { path = "../util/primitives" }
+rand = "0.5.3"
+rlp = { path = "../util/rlp" }
+time = "0.1"
+
+[dev-dependencies]
+lazy_static = "1.0"

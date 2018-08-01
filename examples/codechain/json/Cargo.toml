@@ -1,0 +1,11 @@
+[package]
+name = "codechain-json"
+version = "0.1.0"
+authors = ["CodeChain Team <codechain@kodebox.io>"]
+
+[dependencies]
+primitives = { path = "../util/primitives" }
+rustc-hex = "1.0"
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
