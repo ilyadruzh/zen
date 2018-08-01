@@ -10,3 +10,5 @@
 - https://github.com/chemicstry/recksplorer
 - https://github.com/joemphilips/rust-bitcoin-playground
 - https://github.com/jeandudey/rust-lnd
+- https://github.com/lightningnetwork/lnd
+- https://github.com/ElementsProject/lightning
