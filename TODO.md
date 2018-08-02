@@ -1,13 +1,16 @@
 
 # v0.0.1
 
-- Backend.Database (Exonum Service) for stroing various data
-- Backend.Registration (Exonum Service) for registration
-- Fronend.Registration
-- Frontend.Authorisation
-- Multilangue
-- Lightning Network
-- Atomic Swaps
+- Backend.Database (Exonum Service) for stroing various data - локальная база для разных данных
+- Backend.Registration (Exonum Service) for registration - локальная база для разных данных
+- Бекенд.БД для лайтнинг нетворк - приватный экзонум сервис с открытыми апи
+- Fronend.Registration - логин, пароль, ключи
+- Frontend.Authorisation - пароль, секретный ключ
+- Multilangue - русский, английский, немецкий, китайский, японский, корейский
+- BTC Lightning Network - клиенты и хабы
+- Atomic Swaps - биткоин-эфир
+- автообновление программы
+- работы в тихом режиме
 
 
 # backlog

@@ -4,6 +4,15 @@ node_js:
   - "7"
 
 language: rust
-rvm:
- - 2.2
- - jruby
+script:
+  - cargo build --verbose --all
+  - cargo build --target=wasm32-unknown-unknown --verbose --all
+cache: cargo
+
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
