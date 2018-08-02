@@ -8,7 +8,33 @@ using namespace bc::wallet;
 using namespace bc::machine;
 using namespace bc::chain;
 
-void send_transaction(const transaction& tx, boost::asio::ip::tcp::socket* socket) {
+#define CLOSING_CHANNEL_FEES (10000)
+#define DELAY (600)
+
+data_chunk uint32_to_data_chunk(const uint32_t& value)
+{
+    data_chunk returnerValue; //32 бита
+    for(int i=3; i>=0; i--)
+    {
+       returnerValue.push_back( value>>(8*i));
+    }
+
+    return returnerValue;
+
+}
+ec_compressed XOR(const ec_compressed& point1, const ec_compressed& point2) //побитовое
+{
+    ec_compressed ReturnerValue;
+    for(int i=0; i< ec_compressed_size; i++)
+    {
+        ReturnerValue[i]=point1[i]^point2[i];
+    }
+
+    return ReturnerValue;
+}
+
+void send_transaction(const transaction& tx, boost::asio::ip::tcp::socket* socket)
+{
     data_chunk SenderData=tx.to_data();
     uint64_t SizeData=SenderData.size();
 
@@ -21,7 +47,8 @@ void send_transaction(const transaction& tx, boost::asio::ip::tcp::socket* socke
 
 }
 
-transaction receive_transaction(boost::asio::ip::tcp::socket* socket) {
+transaction receive_transaction(boost::asio::ip::tcp::socket* socket)
+{
     uint64_t SizeOfStr;
     while(socket->receive( boost::asio::buffer(&SizeOfStr, sizeof(uint64_t)) ) != sizeof(uint64_t)){}; //ждем пока клиент отправит первые данные, размер транзакции в символах в кодировке base16
 
@@ -42,7 +69,9 @@ transaction receive_transaction(boost::asio::ip::tcp::socket* socket) {
     return tx;
 }
 
-transaction create_opening_tx(const ec_public& ServerPublicKey, const ec_public& ClientPubKey, const ec_secret& UserSecret) {
+
+transaction create_opening_tx(const ec_public& ServerPublicKey, const ec_public& ClientPubKey, const ec_secret& UserSecret)
+{
 
     payment_address ClientAddress=ClientPubKey.to_payment_address();
     transaction tx; //создаваемая транзакция
@@ -132,7 +161,8 @@ transaction create_opening_tx(const ec_public& ServerPublicKey, const ec_public&
 
 transaction create_commitment_tx(const transaction& funding_tx,const ec_public& ServerPublicKey, const ec_secret& UserSecret,
                                  const ec_compressed& revocation_basepoint, const ec_compressed& remote_per_commitment_basepoint,
-                                 const uint64_t& MyBalance, const uint64_t& ServerBalance) {
+                                 const uint64_t& MyBalance, const uint64_t& ServerBalance)
+{
 
     ec_private UserPrivate(UserSecret, ec_private::testnet);
     ec_public UserPubKey=UserPrivate.to_public();
@@ -223,7 +253,8 @@ revocationpubkey = revocation_basepoint * SHA256(revocation_basepoint || per_com
     return CommitTX;
 }
 
-void client_handler(boost::asio::ip::tcp::socket* socket ,const boost::system::error_code & ec) {
+void client_handler(boost::asio::ip::tcp::socket* socket ,const boost::system::error_code & ec)
+{
     if( ec)
     {
         std::cout<<ec.message()<<std::endl;
@@ -508,6 +539,30 @@ void client_handler(boost::asio::ip::tcp::socket* socket ,const boost::system::e
 
 
 
+
+
+}
+
+int main()
+{
+    std::string Command;
+
+    boost::asio::io_service IOservice;
+   boost::asio::ip::tcp::endpoint Endpoint(boost::asio::ip::address_v4::from_string("127.0.0.1"), 17666); //localhost, порт 17666
+   boost::asio::ip::tcp::socket* Socket=new boost::asio::ip::tcp::socket(IOservice);
+
+    while(true)
+    {
+        std::cout<<"write \"-create_channel\" for creating channel or \"-exit\"\n";
+        std::cin>>Command;
+        if(Command=="-exit") {break;}
+        if(Command=="-create_channel")
+        {
+
+            Socket->async_connect(Endpoint, std::bind( client_handler, Socket, std::placeholders::_1) );
+            IOservice.run();
+        }
+    }
 
 
 }

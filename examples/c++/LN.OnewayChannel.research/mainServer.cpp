@@ -1,4 +1,28 @@
+#include <bitcoin/bitcoin.hpp>
+#include <bitcoin/client.hpp>
+#include <string.h>
+#include <iostream>
+#include <boost/asio.hpp>
 
+using namespace bc;
+using namespace bc::wallet;
+using namespace bc::machine;
+using namespace bc::chain;
+
+#define CLOSING_CHANNEL_FEES (10000)
+#define DELAY (600)
+
+data_chunk uint32_to_data_chunk(const uint32_t& value)
+{
+    data_chunk returnerValue; //32 бита
+    for(int i=3; i>=0; i--)
+    {
+        returnerValue.push_back( value>>(8*i));
+    }
+
+    return returnerValue;
+
+}
 
 void send_transaction(const transaction& tx, boost::asio::ip::tcp::socket* socket)
 {

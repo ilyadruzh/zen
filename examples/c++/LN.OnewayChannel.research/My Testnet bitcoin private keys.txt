@@ -1,0 +1,30 @@
+//сервер
+89a89627de29087218d73d553572d7c1cc07da730bedeb8ff6b7a38059fb261b -secret1 in base16
+ef89a89627de29087218d73d553572d7c1cc07da730bedeb8ff6b7a38059fb261b0141c14be6 -private key in base16
+033ddf60c1191d4e16e4f59a6fa3b5e899c47915a634460d2add2b6bdec0b4c3c6 -publicKey1 in base16
+xrUYCwZLSGLmF7YYXacfHqeNs7AAbZLEgdprXZ6TwXFs                      -publickey1 in base58
+cSCHt4H2kKEgFjPSkghxrQFuhuSsjejV8mFbVjcSt2VUmzsMXSE1              -privateKey1 in base58
+mk3dDgfZPTn3aiNUFZAd3wWcDgV6S7gjAA				  -address1
+
+//клиентура
+da5dc82894ff5f2e8400ac5796c3da5262e872984a67342d6e0d186ec9bf2493 -secret2 in base16
+0240ec3f1d8c3be17a2ad50d6caa5b02155bcef6577a09aacfed280167b2af27ab -publicKey2 in base16
+efda5dc82894ff5f2e8400ac5796c3da5262e872984a67342d6e0d186ec9bf249301f90b5e8e -private key in base16
+fq4mkW5vB8JVWR1Brd3suwFof69wPJvKD8Q2M66bXS9g                      -publickey2 in base58
+cUuBEZXRfxa1bLQJZLuyxXbQWzKddQ31XZbtQjfCMdfruM9uVg7P              -privateKey2 in base58
+mgco3HEFvZ1iTaovhCEz1ZjF2wNR6Xu6oz				  -address2
+
+//сервер
+1d64a06f5026553b7ce04e9aa16144388f116a7ced1eaff0266ea250537f6571 -secret1 in base16
+022975064f9450ce46027b6feaef582fe45d400066d664c5a1bd68633c59e3c247 -publicKey1 in base16
+eFTxLT24mW6jmKBqPKkobp9vxs63Cbu9Uri6ce474LhL                      -publickey1 in base58
+cNZqZ4Y1T1xbZUvDBJ2PcimaKrAWiPVPWQubnVZoNvVUWNS24FQu              -privateKey1 in base58
+mhZxN7AWC9hsypokpNqsfxayXXQzVuJj6x				  -address1
+
+//клиентура
+6a09f70e5d25c3381268f28fd5d6a8ba034acb4bf5221fb4146b4b02a771f404 -secret2 in base16
+027dff488f678bfc64bd8364a355f465a9c0c8165eda7500f3e0270aa43380f27c -publicKey2 in base16
+jwUUh7RZ7keroQ3hi5Gts5FvW2cFTLr4BiJ6mG863Kn3                      -publickey2 in base58
+cR8pwpG7xgJbCfsmRAeBEiabNkDogBbt99dZwaz3UdG7B9VBWVDq              -privateKey2 in base58
+n4iC61cSxRc8Zx9XNjq8Ypo7YFxyqci7Np				  -address2
+
