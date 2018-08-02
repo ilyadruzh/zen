@@ -14,6 +14,7 @@ dev/frontend/package-lock.json
 /home/ilyadruzhinin/Desktop/zen/examples/parity-bitcoin/target
 experimental/rust-wasm/Cargo.lock
 experimental/rust-wasm/target/
+dev/backend/lighting_network/lnd-btc/target
 
 # Logs
 logs

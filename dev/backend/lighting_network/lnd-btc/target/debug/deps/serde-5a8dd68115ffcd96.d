@@ -1,0 +1,12 @@
+/home/ilyadruzhinin/Desktop/proj/zen/dev/backend/lighting_network/lnd/target/debug/deps/libserde-5a8dd68115ffcd96.rlib: /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/lib.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/bytes.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/mod.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/impls.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/value.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/iter.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/ser/mod.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/ser/impls.rs
+
+/home/ilyadruzhinin/Desktop/proj/zen/dev/backend/lighting_network/lnd/target/debug/deps/serde-5a8dd68115ffcd96.d: /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/lib.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/bytes.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/mod.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/impls.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/value.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/iter.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/ser/mod.rs /home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/ser/impls.rs
+
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/lib.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/bytes.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/mod.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/impls.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/de/value.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/iter.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/ser/mod.rs:
+/home/ilyadruzhinin/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-0.6.15/src/ser/impls.rs:
