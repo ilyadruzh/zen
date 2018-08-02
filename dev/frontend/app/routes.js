@@ -23,8 +23,8 @@ export default () => (
                 <Route path="/" component={HomePage} />
               ) : (
                   <React.Fragment>
-                    <Route path="/" component={SignUp} />
-                    <Route path="signin" component={SignIn} />
+                    <Route path="/" component={HomePage} />
+                    {/* <Route path="signin" component={SignIn} /> */}
                   </React.Fragment>
                 )
               }

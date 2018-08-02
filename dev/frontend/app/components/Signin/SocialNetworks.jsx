@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './SocialNetwork.css';
 
 export default class SocialNetworks extends Component {
 
