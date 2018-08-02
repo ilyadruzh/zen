@@ -1,0 +1,1 @@
+{"rustc":12950764475518772251,"features":"[]","target":5771784873082526079,"profile":7990393541957723157,"path":2418030124617415575,"deps":[["serde v1.0.70","serde",14647577087743590198],["serde_derive v1.0.70","serde_derive",1023714016926561551],["strason v0.4.0","strason",12107177487923010569]],"local":[{"Precalculated":"0.1.0"}],"rustflags":[],"edition":"Edition2015"}
