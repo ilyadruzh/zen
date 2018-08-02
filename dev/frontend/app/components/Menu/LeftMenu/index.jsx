@@ -59,7 +59,11 @@ export default class LeftMenu extends Component {
                                 </li>
                                 <li>
                                     <a href="form.html">
-                                        <i className="far fa-check-square"></i>Calls</a>
+                                        <i className="far fa-check-square"></i>Market</a>
+                                </li>
+                                <li>
+                                    <a href="form.html">
+                                        <i className="far fa-check-square"></i>Lightning Network</a>
                                 </li>
                                 <li>
                                     <a href="#">

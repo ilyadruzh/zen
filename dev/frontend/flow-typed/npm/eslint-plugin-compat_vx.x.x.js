@@ -1,4 +1,4 @@
-// flow-typed signature: e82faea6fb87962d5b471ec68ebe6b32
+// flow-typed signature: 93f8c6f20eb598b67d61a02a97b1b446
 // flow-typed version: <<STUB>>/eslint-plugin-compat_v^2.2.0/flow_v0.72.0
 
 /**
@@ -58,6 +58,14 @@ declare module 'eslint-plugin-compat/lib/Versioning' {
   declare module.exports: any;
 }
 
+declare module 'eslint-plugin-compat/src/index' {
+  declare module.exports: any;
+}
+
+declare module 'eslint-plugin-compat/src/providers/index' {
+  declare module.exports: any;
+}
+
 // Filename aliases
 declare module 'eslint-plugin-compat/lib/config/recommended.js' {
   declare module.exports: $Exports<'eslint-plugin-compat/lib/config/recommended'>;
@@ -85,4 +93,10 @@ declare module 'eslint-plugin-compat/lib/rules/compat.js' {
 }
 declare module 'eslint-plugin-compat/lib/Versioning.js' {
   declare module.exports: $Exports<'eslint-plugin-compat/lib/Versioning'>;
+}
+declare module 'eslint-plugin-compat/src/index.js' {
+  declare module.exports: $Exports<'eslint-plugin-compat/src/index'>;
+}
+declare module 'eslint-plugin-compat/src/providers/index.js' {
+  declare module.exports: $Exports<'eslint-plugin-compat/src/providers/index'>;
 }

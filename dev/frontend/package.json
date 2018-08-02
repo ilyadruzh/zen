@@ -202,11 +202,9 @@
   "dependencies": {
     "devtron": "^1.4.0",
     "electron-debug": "^1.5.0",
-    "ethereumjs-devp2p": "^2.5.0",
     "exonum-client": "^0.12.3",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
-    "parity": "^0.2.7",
     "react": "^16.4.0",
     "react-desktop": "^0.3.5",
     "react-dom": "^16.4.0",

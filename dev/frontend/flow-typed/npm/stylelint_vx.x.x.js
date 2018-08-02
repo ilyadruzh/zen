@@ -1,4 +1,4 @@
-// flow-typed signature: 2d2d0e818fd93e9fe0b20fb0e9b003b0
+// flow-typed signature: a8cacf72b9f24d7472762259887cea18
 // flow-typed version: <<STUB>>/stylelint_v^9.2.1/flow_v0.72.0
 
 /**
@@ -59,6 +59,10 @@ declare module 'stylelint/lib/createStylelintResult' {
 }
 
 declare module 'stylelint/lib/dynamicRequire' {
+  declare module.exports: any;
+}
+
+declare module 'stylelint/lib/formatters/compactFormatter' {
   declare module.exports: any;
 }
 
@@ -466,7 +470,15 @@ declare module 'stylelint/lib/rules/keyframe-declaration-no-important/index' {
   declare module.exports: any;
 }
 
+declare module 'stylelint/lib/rules/keyframes-name-pattern/index' {
+  declare module.exports: any;
+}
+
 declare module 'stylelint/lib/rules/length-zero-no-unit/index' {
+  declare module.exports: any;
+}
+
+declare module 'stylelint/lib/rules/linebreaks/index' {
   declare module.exports: any;
 }
 
@@ -503,6 +515,10 @@ declare module 'stylelint/lib/rules/media-feature-name-no-unknown/index' {
 }
 
 declare module 'stylelint/lib/rules/media-feature-name-no-vendor-prefix/index' {
+  declare module.exports: any;
+}
+
+declare module 'stylelint/lib/rules/media-feature-name-value-whitelist/index' {
   declare module.exports: any;
 }
 
@@ -922,6 +938,10 @@ declare module 'stylelint/lib/utils/declarationValueIndex' {
   declare module.exports: any;
 }
 
+declare module 'stylelint/lib/utils/eachDeclarationBlock' {
+  declare module.exports: any;
+}
+
 declare module 'stylelint/lib/utils/eachRoot' {
   declare module.exports: any;
 }
@@ -1010,6 +1030,10 @@ declare module 'stylelint/lib/utils/hasScssInterpolation' {
   declare module.exports: any;
 }
 
+declare module 'stylelint/lib/utils/hasTplInterpolation' {
+  declare module.exports: any;
+}
+
 declare module 'stylelint/lib/utils/isAfterComment' {
   declare module.exports: any;
 }
@@ -1075,10 +1099,6 @@ declare module 'stylelint/lib/utils/isKeyframeRule' {
 }
 
 declare module 'stylelint/lib/utils/isKeyframeSelector' {
-  declare module.exports: any;
-}
-
-declare module 'stylelint/lib/utils/isNestedProperty' {
   declare module.exports: any;
 }
 
@@ -1248,6 +1268,9 @@ declare module 'stylelint/lib/createStylelintResult.js' {
 }
 declare module 'stylelint/lib/dynamicRequire.js' {
   declare module.exports: $Exports<'stylelint/lib/dynamicRequire'>;
+}
+declare module 'stylelint/lib/formatters/compactFormatter.js' {
+  declare module.exports: $Exports<'stylelint/lib/formatters/compactFormatter'>;
 }
 declare module 'stylelint/lib/formatters/index.js' {
   declare module.exports: $Exports<'stylelint/lib/formatters/index'>;
@@ -1552,8 +1575,14 @@ declare module 'stylelint/lib/rules/index.js' {
 declare module 'stylelint/lib/rules/keyframe-declaration-no-important/index.js' {
   declare module.exports: $Exports<'stylelint/lib/rules/keyframe-declaration-no-important/index'>;
 }
+declare module 'stylelint/lib/rules/keyframes-name-pattern/index.js' {
+  declare module.exports: $Exports<'stylelint/lib/rules/keyframes-name-pattern/index'>;
+}
 declare module 'stylelint/lib/rules/length-zero-no-unit/index.js' {
   declare module.exports: $Exports<'stylelint/lib/rules/length-zero-no-unit/index'>;
+}
+declare module 'stylelint/lib/rules/linebreaks/index.js' {
+  declare module.exports: $Exports<'stylelint/lib/rules/linebreaks/index'>;
 }
 declare module 'stylelint/lib/rules/max-empty-lines/index.js' {
   declare module.exports: $Exports<'stylelint/lib/rules/max-empty-lines/index'>;
@@ -1581,6 +1610,9 @@ declare module 'stylelint/lib/rules/media-feature-name-no-unknown/index.js' {
 }
 declare module 'stylelint/lib/rules/media-feature-name-no-vendor-prefix/index.js' {
   declare module.exports: $Exports<'stylelint/lib/rules/media-feature-name-no-vendor-prefix/index'>;
+}
+declare module 'stylelint/lib/rules/media-feature-name-value-whitelist/index.js' {
+  declare module.exports: $Exports<'stylelint/lib/rules/media-feature-name-value-whitelist/index'>;
 }
 declare module 'stylelint/lib/rules/media-feature-name-whitelist/index.js' {
   declare module.exports: $Exports<'stylelint/lib/rules/media-feature-name-whitelist/index'>;
@@ -1894,6 +1926,9 @@ declare module 'stylelint/lib/utils/containsString.js' {
 declare module 'stylelint/lib/utils/declarationValueIndex.js' {
   declare module.exports: $Exports<'stylelint/lib/utils/declarationValueIndex'>;
 }
+declare module 'stylelint/lib/utils/eachDeclarationBlock.js' {
+  declare module.exports: $Exports<'stylelint/lib/utils/eachDeclarationBlock'>;
+}
 declare module 'stylelint/lib/utils/eachRoot.js' {
   declare module.exports: $Exports<'stylelint/lib/utils/eachRoot'>;
 }
@@ -1960,6 +1995,9 @@ declare module 'stylelint/lib/utils/hasPsvInterpolation.js' {
 declare module 'stylelint/lib/utils/hasScssInterpolation.js' {
   declare module.exports: $Exports<'stylelint/lib/utils/hasScssInterpolation'>;
 }
+declare module 'stylelint/lib/utils/hasTplInterpolation.js' {
+  declare module.exports: $Exports<'stylelint/lib/utils/hasTplInterpolation'>;
+}
 declare module 'stylelint/lib/utils/isAfterComment.js' {
   declare module.exports: $Exports<'stylelint/lib/utils/isAfterComment'>;
 }
@@ -2010,9 +2048,6 @@ declare module 'stylelint/lib/utils/isKeyframeRule.js' {
 }
 declare module 'stylelint/lib/utils/isKeyframeSelector.js' {
   declare module.exports: $Exports<'stylelint/lib/utils/isKeyframeSelector'>;
-}
-declare module 'stylelint/lib/utils/isNestedProperty.js' {
-  declare module.exports: $Exports<'stylelint/lib/utils/isNestedProperty'>;
 }
 declare module 'stylelint/lib/utils/isNumbery.js' {
   declare module.exports: $Exports<'stylelint/lib/utils/isNumbery'>;
