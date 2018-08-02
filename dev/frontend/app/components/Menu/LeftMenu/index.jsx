@@ -13,6 +13,13 @@ export default class LeftMenu extends Component {
         super(props)
     }
 
+    openSubMenu(e){
+        e.preventDefault();
+        that.find(".arrow").toggleClass("up");
+        that.toggleClass("open");
+        that.parent().find('.js-sub-list').slideToggle("250");
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -27,7 +34,7 @@ export default class LeftMenu extends Component {
                     <div className="menu-sidebar__content js-scrollbar1">
                         <nav className="navbar-sidebar">
                             <ul className="list-unstyled navbar__list">
-                                <li className="active has-sub">
+                                <li className="active has-sub" onClick={this.openSubMenu}>
                                     <a className="js-arrow" href="#">
                                         <i className="fas fa-tachometer-alt"></i>Home</a>
                                     <ul className="list-unstyled navbar__sub-list js-sub-list">

@@ -15,6 +15,7 @@ dev/frontend/package-lock.json
 experimental/rust-wasm/Cargo.lock
 experimental/rust-wasm/target/
 dev/backend/lighting_network/lnd-btc/target
+dev/backend/lighting_network/lnd-btc/target
 
 # Logs
 logs

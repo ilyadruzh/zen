@@ -1,4 +1,4 @@
-// flow-typed signature: fdad95d246fcf0791ad39e14a5ce78ab
+// flow-typed signature: d484db53e06e0a2f498b7fde388522c0
 // flow-typed version: <<STUB>>/eslint-plugin-jest_v^21.15.2/flow_v0.72.0
 
 /**
@@ -54,10 +54,6 @@ declare module 'eslint-plugin-jest/rules/__tests__/no-identical-title.test' {
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-jest/rules/__tests__/no-jasmine-globals.test' {
-  declare module.exports: any;
-}
-
 declare module 'eslint-plugin-jest/rules/__tests__/no-jest-import.test' {
   declare module.exports: any;
 }
@@ -71,10 +67,6 @@ declare module 'eslint-plugin-jest/rules/__tests__/no-test-prefixes.test' {
 }
 
 declare module 'eslint-plugin-jest/rules/__tests__/prefer-expect-assertions.test' {
-  declare module.exports: any;
-}
-
-declare module 'eslint-plugin-jest/rules/__tests__/prefer-inline-snapshots.test' {
   declare module.exports: any;
 }
 
@@ -126,10 +118,6 @@ declare module 'eslint-plugin-jest/rules/no-identical-title' {
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-jest/rules/no-jasmine-globals' {
-  declare module.exports: any;
-}
-
 declare module 'eslint-plugin-jest/rules/no-jest-import' {
   declare module.exports: any;
 }
@@ -143,10 +131,6 @@ declare module 'eslint-plugin-jest/rules/no-test-prefixes' {
 }
 
 declare module 'eslint-plugin-jest/rules/prefer-expect-assertions' {
-  declare module.exports: any;
-}
-
-declare module 'eslint-plugin-jest/rules/prefer-inline-snapshots' {
   declare module.exports: any;
 }
 
@@ -209,9 +193,6 @@ declare module 'eslint-plugin-jest/rules/__tests__/no-hooks.test.js' {
 declare module 'eslint-plugin-jest/rules/__tests__/no-identical-title.test.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/__tests__/no-identical-title.test'>;
 }
-declare module 'eslint-plugin-jest/rules/__tests__/no-jasmine-globals.test.js' {
-  declare module.exports: $Exports<'eslint-plugin-jest/rules/__tests__/no-jasmine-globals.test'>;
-}
 declare module 'eslint-plugin-jest/rules/__tests__/no-jest-import.test.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/__tests__/no-jest-import.test'>;
 }
@@ -223,9 +204,6 @@ declare module 'eslint-plugin-jest/rules/__tests__/no-test-prefixes.test.js' {
 }
 declare module 'eslint-plugin-jest/rules/__tests__/prefer-expect-assertions.test.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/__tests__/prefer-expect-assertions.test'>;
-}
-declare module 'eslint-plugin-jest/rules/__tests__/prefer-inline-snapshots.test.js' {
-  declare module.exports: $Exports<'eslint-plugin-jest/rules/__tests__/prefer-inline-snapshots.test'>;
 }
 declare module 'eslint-plugin-jest/rules/__tests__/prefer-to-be-null.test.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/__tests__/prefer-to-be-null.test'>;
@@ -263,9 +241,6 @@ declare module 'eslint-plugin-jest/rules/no-hooks.js' {
 declare module 'eslint-plugin-jest/rules/no-identical-title.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/no-identical-title'>;
 }
-declare module 'eslint-plugin-jest/rules/no-jasmine-globals.js' {
-  declare module.exports: $Exports<'eslint-plugin-jest/rules/no-jasmine-globals'>;
-}
 declare module 'eslint-plugin-jest/rules/no-jest-import.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/no-jest-import'>;
 }
@@ -277,9 +252,6 @@ declare module 'eslint-plugin-jest/rules/no-test-prefixes.js' {
 }
 declare module 'eslint-plugin-jest/rules/prefer-expect-assertions.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/prefer-expect-assertions'>;
-}
-declare module 'eslint-plugin-jest/rules/prefer-inline-snapshots.js' {
-  declare module.exports: $Exports<'eslint-plugin-jest/rules/prefer-inline-snapshots'>;
 }
 declare module 'eslint-plugin-jest/rules/prefer-to-be-null.js' {
   declare module.exports: $Exports<'eslint-plugin-jest/rules/prefer-to-be-null'>;

@@ -4,7 +4,7 @@ const AuthContext = React.createContext();
 
 class AuthProvider extends Component {
   state = {
-    isAuth: false
+    isAuth: true
   }
 
   render() {

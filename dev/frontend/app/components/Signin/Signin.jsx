@@ -5,10 +5,10 @@ import styles from './Signin.css';
 import SocialNetworks from './SocialNetworks'
 import FieldsForAuth from './FieldsForAuth'
 import SignInButton from './SignInButton'
-import CheckBoxRemeberMe from './_checkBoxRemeberMe'
-import CheckBoxForgottenPassword from './_checkBoxForgottenPassword'
-import ButtonSignUp from './_button_SignUp'
-import LogoSignIn from './_logo_SignIn'
+import CheckBoxRemeberMe from './checkBoxRemeberMe'
+import CheckBoxForgottenPassword from './checkBoxForgottenPassword'
+import ButtonSignUp from './button_SignUp'
+import LogoSignIn from './logo_SignIn'
 export default class Signin extends Component {
 
     render() {
