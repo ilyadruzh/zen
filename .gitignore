@@ -16,6 +16,7 @@ experimental/rust-wasm/Cargo.lock
 experimental/rust-wasm/target/
 dev/backend/lighting_network/lnd-btc/target
 dev/backend/lighting_network/lnd-btc/target
+dev/backend/exonum_services/target
 
 # Logs
 logs

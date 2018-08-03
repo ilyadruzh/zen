@@ -1,0 +1,29 @@
+[package]
+name = "lnd-btc"
+version = "0.0.1"
+authors = ["Ilya Druzhinin"]
+license = ""
+repository = ""
+description = ""
+build = "build.rs"
+
+[features]
+# Supports tracking channels with a non-bitcoin chain hashes. Currently enables all kinds of fun DoS attacks.
+non_bitcoin_chain_hash_routing = []
+fuzztarget = ["secp256k1/fuzztarget", "bitcoin/fuzztarget"]
+
+[dependencies]
+bitcoin = "0.13"
+rust-crypto = "0.2"
+rand = "0.4"
+secp256k1 = "0.9"
+
+[build-dependencies]
+cc = "1.0"
+
+[dev-dependencies.bitcoin]
+version = "0.13"
+features = ["bitcoinconsensus"]
+
+[dev-dependencies]
+hex = "0.3"

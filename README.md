@@ -1,3 +1,7 @@
-# zen
+# [WIP] ZenApp
 
-backlog - изменения, которые нужно включить в v.0.1.0
+## serverless decentralized distributed app
+
+## About
+
+description
