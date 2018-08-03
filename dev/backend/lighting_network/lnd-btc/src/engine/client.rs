@@ -251,13 +251,15 @@ fn create_commitment_tx(
     let n_sequence: u32 =(1<<22) | (n_time>>9);
 
     //вход
-    output_point UTXO(funding_tx.hash(), 0u); //вход транзакции обязательства, это первый(с нулевым индексом) выход созданной ранее funding транзакции
+    //вход транзакции обязательства, это первый(с нулевым индексом) выход созданной ранее funding транзакции
+    output_point UTXO(funding_tx.hash(), 0u); 
 
     let input_0: input;
     input_0.set_previous_output(UTXO);
     input_0.set_sequence(0xffffffff);
 
-    commit_tx.inputs().push_back(input_0); //добавим вход без подписи
+     //добавим вход без подписи
+    commit_tx.inputs().push_back(input_0);
 
     //выходы
     let output_0: output;  //выход на свой адрес с p2pkh выходом
@@ -333,16 +335,19 @@ fn create_commitment_tx(
 // TcpStream - boost::asio::ip::tcp::socket
 // AddrParseError - boost::system::error_code
 fn client_handler(socket: TcpStream, ec: AddrParseError) {
+
     if (ec) {
         // вывод информации по ошибке
         std::cout<<ec.message()<<std::endl;
         return;
     }
 
-    ec_public ServerPublicKey("033ddf60c1191d4e16e4f59a6fa3b5e899c47915a634460d2add2b6bdec0b4c3c6"); //адрес сервера нужно по идее передавать по сети
+    //адрес сервера нужно по идее передавать по сети
+    ec_public ServerPublicKey("033ddf60c1191d4e16e4f59a6fa3b5e899c47915a634460d2add2b6bdec0b4c3c6"); 
 
     let mut client_pub_key_str: String = String::new();
     println!("enter your public key in base16:\n");
+
     // Ввод данных в консоль
     // std::cin>>client_pub_key_str;
     io::stdin().read_to_string(&mut client_pub_key_str);
@@ -364,7 +369,7 @@ fn client_handler(socket: TcpStream, ec: AddrParseError) {
         println!("error: Invalid private key for inputed before public key\n");
     }
 
-    transaction funding_tx=create_opening_tx(ServerPublicKey, ClientPubKey, user_secret);
+    let funding_tx: transaction::Transaction = create_opening_tx(ServerPublicKey, ClientPubKey, user_secret);
 
     //cout<<"\n\n tx: "<<encode_base16(tx.to_data(true,true)) << std::endl;
 
@@ -434,7 +439,7 @@ fn client_handler(socket: TcpStream, ec: AddrParseError) {
     let commit_tx: transaction = create_commitment_tx(funding_tx,ServerPublicKey, user_secret, revocation_basepoint, remote_per_commitment_basepoint,MyBalance,ServerBalance);
 
     //отправляем серверу первую транзакцию-обязательство
-    send_transaction(commit_tx,socket);
+    send_transaction(commit_tx, socket);
 
     //получаем от сервера его транзакцию
     let remote_commit_tx: transaction = receive_transaction(socket);
