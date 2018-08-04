@@ -38,6 +38,7 @@ struct BidirectionalNoiseState {
 	h: [u8; 32],
 	ck: [u8; 32],
 }
+
 enum DirectionalNoiseState {
 	Outbound {
 		ie: SecretKey,
@@ -48,6 +49,7 @@ enum DirectionalNoiseState {
 		temp_k2: Option<[u8; 32]>, // filled in if state >= PostActTwo
 	}
 }
+
 enum NoiseState {
 	InProgress {
 		state: NoiseStep,

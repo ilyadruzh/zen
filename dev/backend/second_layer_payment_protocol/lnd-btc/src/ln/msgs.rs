@@ -23,6 +23,7 @@ pub trait MsgEncodable {
 		res
 	}
 }
+
 #[derive(Debug)]
 pub enum DecodeError {
 	/// Unknown realm byte in an OnionHopData packet
@@ -41,6 +42,7 @@ pub enum DecodeError {
 	/// (currently only generated in node_announcement)
 	BadLengthDescriptor,
 }
+
 pub trait MsgDecodable: Sized {
 	fn decode(v: &[u8]) -> Result<Self, DecodeError>;
 }
@@ -66,21 +68,21 @@ impl LocalFeatures {
 	}
 
 	pub fn initial_routing_sync(&self) -> bool {
-		self.flags.len() > 0 && (self.flags[0] & (1 << 3)) != 0
+		self.flags.len() > 0 && (self.flags[0] & (1<< 3)) != 0
 	}
 	pub fn set_initial_routing_sync(&mut self) {
 		if self.flags.len() == 0 {
-			self.flags.resize(1, 1 << 3);
+			self.flags.resize(1, 1<< 3);
 		} else {
-			self.flags[0] |= 1 << 3;
+			self.flags[0] |= 1<< 3;
 		}
 	}
 
 	pub fn supports_upfront_shutdown_script(&self) -> bool {
-		self.flags.len() > 0 && (self.flags[0] & (3 << 4)) != 0
+		self.flags.len() > 0 && (self.flags[0] & (3<< 4)) != 0
 	}
 	pub fn requires_upfront_shutdown_script(&self) -> bool {
-		self.flags.len() > 0 && (self.flags[0] & (1 << 4)) != 0
+		self.flags.len() > 0 && (self.flags[0] & (1<< 4)) != 0
 	}
 
 	pub fn requires_unknown_bits(&self) -> bool {
@@ -551,6 +553,7 @@ impl MsgDecodable for LocalFeatures {
 		})
 	}
 }
+
 impl MsgEncodable for LocalFeatures {
 	fn encode(&self) -> Vec<u8> {
 		let mut res = Vec::with_capacity(self.flags.len() + 2);
@@ -573,6 +576,7 @@ impl MsgDecodable for GlobalFeatures {
 		})
 	}
 }
+
 impl MsgEncodable for GlobalFeatures {
 	fn encode(&self) -> Vec<u8> {
 		let mut res = Vec::with_capacity(self.flags.len() + 2);
@@ -596,6 +600,7 @@ impl MsgDecodable for Init {
 		})
 	}
 }
+
 impl MsgEncodable for Init {
 	fn encode(&self) -> Vec<u8> {
 		let mut res = Vec::with_capacity(self.global_features.flags.len() + self.local_features.flags.len());
@@ -621,6 +626,7 @@ impl MsgDecodable for Ping {
 		})
 	}
 }
+
 impl MsgEncodable for Ping {
 	fn encode(&self) -> Vec<u8> {
 		let mut res = Vec::with_capacity(self.byteslen as usize + 2);
