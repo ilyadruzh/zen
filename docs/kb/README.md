@@ -11,3 +11,41 @@
 
 ## Atomic Swap
 - https://github.com/swaponline
+
+## DAG
+
+## Схема Шнорра
+
+## Taproot
+
+## Hashgrapth
+
+## ZK Snark
+
+## Booletproof
+
+## Reputation System
+
+## Третйский суд
+
+Механизм кары недобропорядочных пользователей
+
+## Ratings
+
+## Vm
+
+## Protobuf
+
+## gRPC
+
+## libp2p
+
+## WebSockets
+
+## cjdns
+
+## gunjs
+
+## IPFS
+
+# honggfuzz
