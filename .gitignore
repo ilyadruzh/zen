@@ -6,16 +6,16 @@ dev/backend/exonum/services/registration/target
 dev/backend/exonum/Cargo.lock
 dev/backend/zencore/services/rolesystem/target
 dev/backend/zencore/services/rolesystem/Cargo.lock
+dev/backend/lighting_network/lnd-btc/target
 dev/frontend/node_modules
 dev/frontend/app/node_modules
 dev/frontend/release
 dev/frontend/yarn.lock
 dev/frontend/package-lock.json
-/home/ilyadruzhinin/Desktop/zen/examples/parity-bitcoin/target
+examples/parity-bitcoin/target
 experimental/rust-wasm/Cargo.lock
 experimental/rust-wasm/target/
-dev/backend/lighting_network/lnd-btc/target
-dev/backend/lighting_network/lnd-btc/target
+
 
 # Logs
 logs
