@@ -17,6 +17,7 @@ experimental/rust-wasm/target/
 dev/backend/lighting_network/lnd-btc/target
 dev/backend/lighting_network/lnd-btc/target
 dev/backend/exonum_services/target
+dev/backend/second_layer_payment_protocol/lnd-btc/target/
 
 # Logs
 logs
